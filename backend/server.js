@@ -58,10 +58,15 @@ io.on("connection", (socket) => {
 });
 
 app.use(cookieParser());
+
 app.use(cors({
-  origin: "http://localhost:5173", // frontend port
+  origin: [
+    "http://localhost:5173",
+    "https://your-app.vercel.app"
+  ],
   credentials: true
 }));
+
 app.use(express.json());
 
 // MongoDB
