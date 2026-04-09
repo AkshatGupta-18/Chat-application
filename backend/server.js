@@ -27,12 +27,10 @@ export const onlineUsers = new Map();
 
 io.on("connection", (socket) => {
 
-  console.log("Socket connected:", socket.id);
 
   // Frontend will emit this right after connecting
   socket.on("register", (userId) => {
     onlineUsers.set(String(userId), socket.id);
-    console.log(`User ${userId} registered with socket ${socket.id}`);
   });
 
   socket.on("disconnect", () => {
@@ -40,7 +38,6 @@ io.on("connection", (socket) => {
     for (const [userId, socketId] of onlineUsers.entries()) {
       if (socketId === socket.id) {
         onlineUsers.delete(userId);
-        console.log(`User ${userId} disconnected`);
         break;
       }
     }

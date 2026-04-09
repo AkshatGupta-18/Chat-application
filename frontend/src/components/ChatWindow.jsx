@@ -30,7 +30,6 @@ function ChatWindow({
 
   useEffect(() => {
     socket.on("newMessage", (incomingMessage) => {
-      console.log("📨 incoming message:", incomingMessage);  // 👈 add this
 
       // Only add it if we're currently chatting with that sender
       if (String(incomingMessage.sender) === String(selectedUser?._id)) {
