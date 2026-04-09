@@ -1,6 +1,6 @@
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:5000", {  // 👈 your backend port
+const socket = io(`${import.meta.env.VITE_BACKEND_URL}`, {  // 👈 your backend port
   withCredentials: true,
   autoConnect: false   // 👈 we'll connect manually after login
 });

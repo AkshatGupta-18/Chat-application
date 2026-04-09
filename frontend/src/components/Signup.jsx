@@ -15,7 +15,7 @@ function Signup() {
     setError("");
     setLoading(true);
     try {
-      await axios.post("http://localhost:5000/api/user/register", form, { withCredentials: true });
+      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/user/register`, form, { withCredentials: true });
       navigate("/user/login");
     } catch (err) {
       setError(err.response?.data?.message || "Something went wrong");

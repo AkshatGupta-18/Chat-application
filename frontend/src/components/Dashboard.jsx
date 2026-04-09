@@ -16,7 +16,7 @@ function Dashboard() {
     const fetchUsers = async () => {
       try {
         const res = await axios.get(
-          "http://localhost:5000/api/user/dashboard",
+          `${import.meta.env.VITE_BACKEND_URL}/api/user/dashboard`,
           { withCredentials: true }
         );
         setUsers(res.data.users);
@@ -35,7 +35,7 @@ function Dashboard() {
 
     try {
       const res = await axios.get(
-        `http://localhost:5000/api/message/${user._id}`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/message/${user._id}`,
         { withCredentials: true }
       );
       setMessages(res.data.messages);
@@ -50,7 +50,7 @@ function Dashboard() {
 
     try {
       const res = await axios.post(
-        "http://localhost:5000/api/message/send",
+        `${import.meta.env.VITE_BACKEND_URL}/api/message/send`,
         {
           receiverId: selectedUser._id,
           content: message

@@ -16,7 +16,7 @@ function Login() {
     setError("");
     setLoading(true);
     try {
-      const res = await axios.post("http://localhost:5000/api/user/login", form, { withCredentials: true });
+      const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/user/login`, form, { withCredentials: true });
 
       socket.connect();
       socket.emit("register", res.data.user._id);
