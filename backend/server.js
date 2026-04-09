@@ -17,7 +17,7 @@ const server = http.createServer(app);
 
 export const io = new Server(server, {            // 👈 export so routes can use it later
   cors: {
-    origin: "*",
+    origin: "https://akshatgupta-chat-application-74vyykfk4.vercel.app",
     credentials: true
   }
 });
@@ -62,7 +62,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://chat-application-xi-black.vercel.app/"
+    "https://akshatgupta-chat-application-74vyykfk4.vercel.app"
   ],
   credentials: true
 }));
