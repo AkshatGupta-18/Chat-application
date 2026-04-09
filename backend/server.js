@@ -62,7 +62,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     "http://localhost:5173",
-    "https://your-app.vercel.app"
+    "https://chat-application-xi-black.vercel.app/"
   ],
   credentials: true
 }));
