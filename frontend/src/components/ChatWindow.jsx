@@ -10,6 +10,7 @@ function ChatWindow({
   setMessage,
   handleSend,
   handleTyping,
+  handleBack,
 }) {
   const messagesEndRef = useRef(null);
   const [isTyping, setIsTyping] = useState(false);
@@ -69,7 +70,15 @@ function ChatWindow({
 
   return (
     <div className="h-full flex flex-col bg-white overflow-hidden">
-
+      <button
+        onClick={handleBack}
+        className="md:hidden p-1.5 rounded-xl hover:bg-slate-100 transition text-slate-500 flex-shrink-0"
+        aria-label="Back"
+      >
+        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+        </svg>
+      </button>
       {/* ── HEADER ── */}
       <div className="bg-white border-b border-slate-100 px-4 sm:px-5 py-3 flex items-center gap-3 flex-shrink-0">
         <div className="flex-shrink-0">

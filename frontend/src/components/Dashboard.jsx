@@ -28,6 +28,11 @@ function Dashboard() {
     fetchUsers();
   }, []);
 
+  // 1. Add this function inside Dashboard()
+  const handleBack = () => {
+    setSelectedUser(null);
+  };
+
   const handleSelectUser = async (user) => {
     setSelectedUser(user);
     setSidebarOpen(false);
@@ -226,6 +231,7 @@ function Dashboard() {
               setMessage={setMessage}
               handleSend={handleSend}
               handleTyping={handleTyping}
+              handleBack={handleBack}
             />
           )}
         </div>
